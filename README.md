@@ -4,7 +4,7 @@
 Please note this is for a dev setup, not production.
 On first login you will need to add passwords to the setup - the docker-compose.yaml contains the username/password that you can use.
 Database setup should be as per image:
-![Image]{./database-config.png}
+![Image](./database-config.png)
 
 ## T4 Framework setup
 Go to 2. Manual Installation (files are in repo root)
