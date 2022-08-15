@@ -3,7 +3,8 @@
 ## Joomla setup 
 Please note this is for a dev setup, not production.
 On first login you will need to add passwords to the setup - the docker-compose.yaml contains the username/password that you can use.
-Database setup should be as per image:
+Database setup should be as per image (you can use auto generated table prefix):
+
 ![Image](./database-config.png)
 
 ## T4 Framework setup
