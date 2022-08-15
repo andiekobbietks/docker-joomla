@@ -3,6 +3,13 @@
 ## Joomla setup 
 Please note this is for a dev setup, not production.
 On first login you will need to add passwords to the setup - the docker-compose.yaml contains the username/password that you can use.
+
+```
+# in root directory of the unpackaged zip / repository root
+docker compose up
+
+# wait about 3 mins until all the files have installed and you see joomla-4-t4 in the logs, then you can access in browser with localhost:80
+```
 Database setup should be as per image (you can use auto generated table prefix):
 
 ![Image](./database-config.png)
