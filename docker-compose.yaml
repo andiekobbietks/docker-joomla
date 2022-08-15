@@ -1,0 +1,37 @@
+version: '3.8'
+services:
+  php-joomla:
+    container_name: joomla-4-t4
+    image: joomla:php8.0
+    volumes:
+      - .:/var/www/html/
+      - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+    environment:
+      JOOMLA_DB_HOST: joomladb
+      JOOMLA_DB_PASSWORD: root
+      JOOMLA_SUPER_USER: super
+      JOOMLA_SUPER_PASSWORD: passwordpassword
+    ports:
+      - 80:80
+  joomladb:
+    container_name: joomladb
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: joomla-t4
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: password
+    volumes:
+      - mysqldb:/var/lib/mysql
+    ports:
+      - "9906:3306"
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - '82:80'
+    environment:
+      PMA_HOST: joomladb
+    depends_on:
+      - joomladb
+volumes:
+  mysqldb:
